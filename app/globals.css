@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-inter: var(--font-inter, 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+  
+  /* Color Palette based on design specification */
+  --color-plum: #22192A;
+  --color-rose: #B3245B;
+  --color-rose-muda: #FBEAF1;
+  --color-latar: #F4F4F6;
+  --color-putih: #FFFFFF;
+  --color-garis: #E3E2E8;
+  --color-teks-utama: #1D1B22;
+  --color-teks-abu: #6B6875;
+  --color-merah: #C0302F;
+  --color-merah-muda: #FDEEEE;
+  --color-hijau: #1C7A4B;
+  --color-hijau-muda: #E7F4EC;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-plum: var(--color-plum);
+  --color-rose: var(--color-rose);
+  --color-rose-muda: var(--color-rose-muda);
+  --color-latar: var(--color-latar);
+  --color-putih: var(--color-putih);
+  --color-garis: var(--color-garis);
+  --color-teks-utama: var(--color-teks-utama);
+  --color-teks-abu: var(--color-teks-abu);
+  --color-merah: var(--color-merah);
+  --color-merah-muda: var(--color-merah-muda);
+  --color-hijau: var(--color-hijau);
+  --color-hijau-muda: var(--color-hijau-muda);
+  --font-sans: var(--font-inter);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-latar);
+  color: var(--color-teks-utama);
+  font-family: var(--font-inter);
+  margin: 0;
+  padding: 0;
 }
