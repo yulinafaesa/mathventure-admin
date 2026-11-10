@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import Brand from "./Brand";
-import { DashboardIcon, LogoutIcon, MateriIcon, SoalIcon, UserIcon } from "./icons";
+import { CloseIcon, DashboardIcon, LogoutIcon, MateriIcon, SoalIcon, UserIcon } from "./icons";
 
 const NAV = [
   { href: "/dashboard", label: "Dashboard", Icon: DashboardIcon },
@@ -12,7 +12,12 @@ const NAV = [
   { href: "/user", label: "Kelola User", Icon: UserIcon },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+  isOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
 
@@ -26,7 +31,18 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar${isOpen ? " sidebar--open" : ""}`}>
+      {onClose && (
+        <button
+          type="button"
+          className="sidebar__close"
+          onClick={onClose}
+          aria-label="Tutup Menu"
+        >
+          <CloseIcon width={20} height={20} />
+        </button>
+      )}
+
       <Brand />
 
       <nav className="nav">
@@ -38,11 +54,12 @@ export default function Sidebar() {
               href={href}
               className={`nav__item${active ? " nav__item--active" : ""}`}
               aria-current={active ? "page" : undefined}
+              onClick={onClose}
             >
               <span className="nav__icon">
                 <Icon />
               </span>
-              <span>{label}</span>
+              <span className="nav__label">{label}</span>
             </Link>
           );
         })}
