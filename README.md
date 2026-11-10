@@ -1,33 +1,39 @@
-# MathVenture Admin Panel (Next.js)
+# MathVenture Admin Panel (Next.js) + Backend (Express + SQLite)
 
-Halaman login dan dashboard admin MathVenture, dibuat dengan Next.js (App Router) + TypeScript.
+Halaman login dan dashboard admin MathVenture, dibuat dengan Next.js (App Router) + TypeScript dan terhubung ke Backend Express + SQLite (`node:sqlite`).
 
-## Menjalankan
+## Menjalankan Proyek
 
+### 1. Jalankan Backend API (Port 4000)
+Buka terminal pertama:
 ```bash
-npm install
+cd backend
 npm run dev
 ```
+Server backend akan berjalan di `http://localhost:4000` dan otomatis membuat database SQLite di `backend/data/mathventure.db` beserta data awal (Materi, Soal, Siswa, dan Admin).
 
-Buka http://localhost:3000
+### 2. Jalankan Admin Panel (Port 3000)
+Buka terminal kedua:
+```bash
+cd adminmath
+npm run dev
+```
+Buka `http://localhost:3000` di browser.
 
-## Akun login
+## Akun Login Admin Default
 
-Diatur di file `.env.local`:
+| Variabel | Nilai Default |
+| :--- | :--- |
+| `ADMIN_EMAIL` | `adminmathventure@gmail.com` |
+| `ADMIN_PASSWORD` | `Admin@123456` |
 
-| Variabel         | Nilai awal                    |
-| ---------------- | ----------------------------- |
-| `ADMIN_EMAIL`    | adminmathventure@gmail.com    |
-| `ADMIN_PASSWORD` | Admin@123456                  |
-| `AUTH_SECRET`    | string acak untuk token sesi  |
+## Struktur Endpoint Backend (`http://localhost:4000`)
 
-Ganti nilainya sebelum dipakai sungguhan, lalu restart `npm run dev`.
-
-## Struktur
-
-- `app/login` – halaman login (state kosong, terisi, error wajib diisi, error salah password)
-- `app/(admin)/dashboard` – dashboard dengan sidebar, topbar, dan 3 kartu statistik
-- `app/(admin)/materi|soal|user` – halaman kosong sebagai tempat lanjutan
-- `app/api/login`, `app/api/logout` – autentikasi sederhana berbasis cookie
-- `middleware.ts` – mengarahkan ke `/login` bila belum masuk
-- `public/logo.png` – logo MathVenture
+- `GET /api/health` – Cek status server backend
+- `GET /api/bootstrap` – Ambil seluruh data awal (`materi`, `soal`, `users`, `stats`)
+- `GET /api/stats` – Statistik jumlah materi, soal, dan siswa
+- `POST /api/auth/login` – Autentikasi admin
+- `POST /api/auth/student-login` – Autentikasi siswa (untuk aplikasi Flutter `mathventure`)
+- `GET|POST /api/materi` & `GET|PUT|DELETE /api/materi/:id` – CRUD Materi
+- `GET|POST /api/soal` & `GET|PUT|DELETE /api/soal/:id` – CRUD Soal
+- `GET|POST /api/users` & `GET|PUT|DELETE /api/users/:id` – CRUD Siswa (User)
