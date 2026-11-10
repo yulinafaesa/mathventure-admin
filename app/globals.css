@@ -1,6 +1,8 @@
 :root {
   --dark: #211a2b;
   --crimson: #b72459;
+  --purple: #6f4a7e;
+  --purple-dark: #5e3e6b;
   --gray: #6e6b7b;
   --ink: #1d1826;
   --line: #e4e4ea;
@@ -211,15 +213,39 @@ p {
   left: 13px;
 }
 
+/* Pesan error di bawah field */
+
 .input__error {
   position: absolute;
-  top: calc(100% + 2px);
-  right: 0;
+  top: calc(100% + 4px);
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
   color: var(--red);
 }
+
+.input__error::before {
+  content: "";
+  flex: none;
+  width: 16px;
+  height: 16px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c62828' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 7v6M12 16.5v.01'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.input--email.input--error + .form__label--password {
+  margin-top: 34px;
+}
+
+.input--password.input--error + .btn {
+  margin-top: 59px;
+}
+
+/* Tombol Masuk (ungu) */
 
 .btn {
   display: block;
@@ -228,21 +254,24 @@ p {
   margin: 37px 0 0 2px;
   border: 0;
   border-radius: 10px;
-  background: var(--crimson);
+  background: var(--purple);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+  transition: background 0.15s;
 }
 
 .btn:hover:not(:disabled) {
-  filter: brightness(1.06);
+  background: var(--purple-dark);
 }
 
 .btn:disabled {
   opacity: 0.7;
   cursor: wait;
 }
+
+/* Kotak error "Email atau password salah" */
 
 .alert {
   position: absolute;
@@ -260,6 +289,17 @@ p {
   color: var(--red);
   font-size: 15px;
   line-height: 18px;
+}
+
+.alert::before {
+  content: "";
+  position: absolute;
+  left: 82px;
+  top: 28px;
+  width: 18px;
+  height: 18px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c62828' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 7v6M12 16.5v.01'/%3E%3C/svg%3E")
+    center / contain no-repeat;
 }
 
 .alert strong {
@@ -337,19 +377,16 @@ p {
   height: 48px;
 }
 .nav > a:nth-child(2) {
-  height: 43px;
-  margin-top: 2px;
+  height: 44px;
+  margin-top: 3px;
 }
 .nav > a:nth-child(3) {
   height: 44px;
+  margin-top: 2px;
 }
 .nav > a:nth-child(4) {
   height: 44px;
-  margin-top: 11px;
-}
-.nav > a:nth-child(4) .nav__icon {
-  align-self: flex-start;
-  margin-top: -2px;
+  margin-top: 9px;
 }
 
 .nav > a.nav__item--active {
@@ -364,23 +401,23 @@ p {
 
 .logout {
   position: absolute;
-  left: 26px;
-  bottom: 23px;
+  left: 38px;
+  bottom: 29px;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 16px;
   padding: 0;
   border: 0;
   background: none;
   font-size: 26px;
   line-height: 30px;
   font-weight: 400;
-  color: var(--gray);
+  color: #fff;
   cursor: pointer;
 }
 
 .logout:hover {
-  color: #a9a5b8;
+  color: #d9d6e3;
 }
 
 .main {
@@ -394,10 +431,9 @@ p {
   align-items: center;
   justify-content: space-between;
   height: 80px;
-  padding: 3px 17px 0 36px;
-  border: 3px solid var(--line);
-  border-bottom-width: 2px;
-  background: #fff;
+  padding: 3px 20px 0 40px;
+  border: 0;
+  background: var(--bg);
 }
 
 .topbar__title {
@@ -447,32 +483,65 @@ p {
   color: #5f5b6b;
 }
 
+/* ───────── Kartu dashboard ───────── */
+
 .cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  gap: 15px;
   margin-top: 14px;
 }
 
 .card {
   height: 150px;
-  border: 3px solid var(--line);
-  border-radius: 4px;
+  padding: 7px 6px;
+  border: 2px solid var(--line);
+  border-radius: 6px;
   background: #fff;
 }
 
+.card__head {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+.card__icon {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 43px;
+  border-radius: 8px;
+}
+
+.card__icon--siswa {
+  background: #c9b8f1;
+  color: #3f2f86;
+}
+
+.card__icon--materi {
+  background: #f4a3bf;
+  color: #c2255c;
+}
+
+.card__icon--soal {
+  background: #a9d3ef;
+  color: #1a6fd0;
+}
+
 .card__label {
-  margin: 34px 0 0 55px;
-  font-size: 20px;
-  line-height: 24px;
-  font-weight: 600;
-  color: #5f5b6b;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  color: #000;
 }
 
 .card__value {
-  margin: 14px 0 0 19px;
-  font-size: 48px;
-  line-height: 56px;
+  margin: 19px 0 0 62px;
+  font-size: 44px;
+  line-height: 52px;
   font-weight: 800;
   color: #000;
 }
