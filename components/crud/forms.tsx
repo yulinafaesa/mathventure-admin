@@ -57,6 +57,7 @@ export function MateriForm({ materiLama }: { materiLama?: Materi }) {
         showFlash("Materi berhasil diperbarui.");
       } else {
         await addMateri(data);
+        sessionStorage.setItem("scrollToNewItem", "materi");
         showFlash("Materi berhasil disimpan.");
       }
       router.push("/materi");
@@ -146,6 +147,7 @@ export function SoalForm({ soalLama }: { soalLama?: Soal }) {
         showFlash("Soal berhasil diperbarui.");
       } else {
         await addSoal(data);
+        sessionStorage.setItem("scrollToNewItem", "soal");
         showFlash("Soal berhasil disimpan.");
       }
       router.push("/soal");
@@ -235,7 +237,7 @@ export function UserForm({ userLama }: { userLama?: User }) {
   const { addUser, updateUser, showFlash } = useData();
   const [form, setForm] = useState({
     nama: userLama?.nama ?? "",
-    kelas: userLama?.kelas ?? "",
+    kelas: userLama?.kelas ?? "Kelas 3 SD",
     sekolah: userLama?.sekolah ?? "",
   });
   const [errors, setErrors] = useState<Errors>({});
@@ -269,6 +271,7 @@ export function UserForm({ userLama }: { userLama?: User }) {
         showFlash("User berhasil diperbarui.");
       } else {
         await addUser(data);
+        sessionStorage.setItem("scrollToNewItem", "user");
         showFlash("User berhasil disimpan.");
       }
       router.push("/user");
