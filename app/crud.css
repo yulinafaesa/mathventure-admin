@@ -637,3 +637,226 @@
     min-width: 600px;
   }
 }
+
+/* ==========================================
+   MATHVENTURE - KELAS 3 SD USER PAGE
+========================================== */
+
+.crud .user-search-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 320px;
+  max-width: 100%;
+}
+
+.crud .user-search-wrapper > svg {
+  position: absolute;
+  left: 13px;
+  z-index: 1;
+  color: #9994a1;
+  pointer-events: none;
+}
+
+.crud .user-search-wrapper .table-filter {
+  width: 100%;
+  padding-left: 40px;
+}
+
+.crud .class-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 0 16px;
+  border: 1px solid #ead9ed;
+  border-radius: 9px;
+  background: #f8eafb;
+  color: #563160;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.crud .user-class-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 6px;
+  background: #f8eafb;
+  color: #563160;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.crud .pagination-info {
+  margin-top: 16px;
+  color: #77717f;
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .crud .user-search-wrapper {
+    width: 100%;
+  }
+
+  .crud .class-indicator {
+    align-self: flex-start;
+  }
+
+  .crud .pagination-info {
+    text-align: left;
+  }
+}
+
+.crud .field-hint {
+  display: block;
+  margin-top: 7px;
+  color: #77717f;
+  font-size: 12px;
+}
+
+/* Kelas permanen MathVenture: 3 SD */
+
+.crud .class-disabled,
+.crud .class-disabled:disabled {
+  background-color: #f5f3f6;
+  color: #563160;
+  border-color: #e3dce7;
+  opacity: 1;
+  cursor: default;
+  pointer-events: none;
+  user-select: none;
+}
+
+.crud .field-hint {
+  display: block;
+  margin-top: 7px;
+  color: #77717f;
+  font-size: 12px;
+}
+
+
+/* ==========================================
+   MATHVENTURE - CUSTOM PAGINATION
+========================================== */
+
+.mv-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin: 24px 0 12px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.mv-pagination button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.mv-pagination__pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.mv-pagination__nav,
+.mv-pagination__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  height: 38px;
+  min-width: 38px;
+  padding: 0 12px;
+
+  border: 1px solid #e5dce8;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #563160;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: all 0.2s ease;
+}
+
+.mv-pagination__nav:hover:not(:disabled),
+.mv-pagination__number:hover:not(.active) {
+  background: #f8eafb;
+  border-color: #b34a83;
+  color: #563160;
+}
+
+.mv-pagination__number.active {
+  background: #563160;
+  border-color: #563160;
+  color: #ffffff;
+  box-shadow: 0 2px 5px rgba(86, 49, 96, 0.18);
+}
+
+.mv-pagination__nav:disabled {
+  background: #f5f3f6;
+  border-color: #ebe7ed;
+  color: #aaa4af;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.mv-pagination__ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  color: #88818e;
+  font-size: 14px;
+}
+
+/* MOBILE */
+
+@media (max-width: 640px) {
+  .mv-pagination {
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .mv-pagination__nav {
+    height: 36px;
+    padding: 0 9px;
+    font-size: 12px;
+  }
+
+  .mv-pagination__pages {
+    gap: 4px;
+  }
+
+  .mv-pagination__number {
+    min-width: 34px;
+    height: 36px;
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mv-pagination {
+    gap: 4px;
+  }
+
+  .mv-pagination__nav {
+    gap: 3px;
+    padding: 0 6px;
+    font-size: 11px;
+  }
+
+  .mv-pagination__number {
+    min-width: 30px;
+  }
+}
