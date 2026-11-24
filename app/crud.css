@@ -860,3 +860,76 @@
     min-width: 30px;
   }
 }
+
+
+/* ==========================================
+   KELOLA GAMES
+========================================== */
+
+.crud .games-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 220px;
+}
+
+.crud .games-thumbnail {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e8e7ed;
+  flex-shrink: 0;
+}
+
+.crud .games-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 11px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.crud .games-status--active {
+  color: #16834a;
+  background: #e7f7ee;
+}
+
+.crud .games-status--inactive {
+  color: #77717e;
+  background: #efedf1;
+}
+
+.crud .games-image-preview {
+  margin: 0 0 20px;
+}
+
+.crud .games-image-preview p {
+  margin-bottom: 9px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #55515e;
+}
+
+.crud .games-image-preview img {
+  display: block;
+  width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #e8e7ed;
+}
+
+@media (max-width: 768px) {
+  .crud .games-name-cell {
+    min-width: 180px;
+  }
+
+  .crud .games-thumbnail {
+    width: 42px;
+    height: 42px;
+  }
+}

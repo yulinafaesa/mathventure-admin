@@ -172,3 +172,25 @@ export function LockIcon(props: IconProps) {
     </svg>
   );
 }
+
+export function GamesIcon(props: IconProps) {
+  return (
+    <svg
+      width="19"
+      height="19"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
+      <path d="M6 8h12a4 4 0 0 1 3.8 5.2l-1 3.2a2.5 2.5 0 0 1-4.1 1.1L14.5 15h-5l-2.2 2.5a2.5 2.5 0 0 1-4.1-1.1l-1-3.2A4 4 0 0 1 6 8Z" />
+      <path d="M7 11v4M5 13h4" />
+      <circle cx="16.5" cy="11.5" r=".8" />
+      <circle cx="18.5" cy="13.5" r=".8" />
+    </svg>
+  );
+}
