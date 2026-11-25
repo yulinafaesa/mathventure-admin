@@ -11,6 +11,7 @@ export default function Topbar({ onToggleSidebar }: TopbarProps) {
   const pathname = usePathname();
 
   let title = "Dashboard";
+
   if (pathname === "/dashboard") {
     title = "Dashboard";
   } else if (pathname === "/materi/tambah") {
@@ -31,6 +32,12 @@ export default function Topbar({ onToggleSidebar }: TopbarProps) {
     title = "Edit User";
   } else if (pathname.startsWith("/user")) {
     title = "Kelola User";
+  } else if (pathname === "/games/tambah") {
+    title = "Tambah Games";
+  } else if (pathname.startsWith("/games") && pathname.includes("/edit")) {
+    title = "Edit Games";
+  } else if (pathname.startsWith("/games")) {
+    title = "Kelola Games";
   }
 
   const isDashboard = pathname === "/dashboard";
@@ -42,12 +49,15 @@ export default function Topbar({ onToggleSidebar }: TopbarProps) {
           type="button"
           className="topbar__hamburger"
           onClick={onToggleSidebar}
-          aria-label="Toggle Menu"
+          aria-label="Buka menu navigasi"
+          aria-expanded={undefined}
         >
           <MenuIcon width={22} height={22} />
         </button>
+
         <h2 className="topbar__title">{title}</h2>
       </div>
+
       <div className="topbar__user">
         <span className="topbar__avatar">A</span>
         <span className="topbar__name">Admin</span>

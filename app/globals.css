@@ -669,3 +669,298 @@ p {
     opacity: 1;
   }
 }
+
+
+/* ==========================================
+   MATHVENTURE - RESPONSIVE GLOBAL
+   Mobile, Tablet, Desktop
+========================================== */
+
+/* Mencegah halaman melebar melebihi layar */
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .content {
+    padding: 24px 22px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .card__value {
+    font-size: 34px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .shell {
+    width: 100%;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  .sidebar {
+    width: min(280px, 85vw);
+    height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .sidebar .brand {
+    left: 24px;
+    top: 25px;
+  }
+
+  .nav {
+    left: 12px;
+    right: 12px;
+    width: auto;
+    top: 105px;
+  }
+
+  .nav__item {
+    width: 100%;
+    min-height: 44px;
+    height: auto;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-size: 14px;
+  }
+
+  .logout {
+    left: 24px;
+    bottom: 24px;
+    min-height: 44px;
+  }
+
+  .main {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0 !important;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    width: 100%;
+    height: 58px;
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .topbar__left {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .topbar__hamburger {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .topbar__hamburger:active {
+    background: #ecebf0;
+  }
+
+  .topbar__title {
+    min-width: 0;
+    overflow: hidden;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .topbar__user {
+    flex-shrink: 0;
+    gap: 7px;
+  }
+
+  .topbar__avatar {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topbar__name {
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 14px 32px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .cards .card {
+    min-width: 0;
+    padding: 15px 12px;
+    gap: 9px;
+  }
+
+  .card__badge {
+    width: 30px;
+    height: 30px;
+  }
+
+  .card__label {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .card__value {
+    margin-top: 7px;
+    font-size: clamp(25px, 7vw, 34px);
+  }
+
+  .placeholder {
+    padding: 18px;
+    font-size: 14px;
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    touch-action: manipulation;
+  }
+
+  .login {
+    grid-template-columns: 1fr;
+    min-height: 100dvh;
+  }
+
+  .login__left {
+    min-height: 120px;
+  }
+
+  .login__right {
+    width: 100%;
+    padding: 36px 22px;
+  }
+
+  .login .form {
+    width: 100%;
+    max-width: 438px;
+  }
+
+  .login .btn,
+  .login .alert {
+    width: 100%;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+  .content {
+    padding: 17px 12px 28px;
+  }
+
+  .topbar {
+    padding: 0 10px;
+  }
+
+  .topbar__title {
+    font-size: 13px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .cards .card {
+    padding: 15px;
+  }
+
+  .card__value {
+    font-size: 32px;
+  }
+
+  .page-header__title {
+    font-size: 18px;
+  }
+
+  .page-header__sub {
+    font-size: 12px;
+  }
+
+  .login__right {
+    padding: 30px 18px;
+  }
+
+  .login .form__title {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .brand {
+    left: 20px;
+    top: 24px;
+  }
+
+  .brand__logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .brand__name {
+    font-size: 21px;
+  }
+
+  .brand__sub {
+    font-size: 12px;
+  }
+}
+
+/* HP sangat kecil */
+@media (max-width: 360px) {
+  .content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .topbar__title {
+    font-size: 12px;
+  }
+
+  .cards .card {
+    padding: 12px 10px;
+  }
+
+  .card__value {
+    font-size: 27px;
+  }
+}

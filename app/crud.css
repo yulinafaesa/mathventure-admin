@@ -933,3 +933,280 @@
     height: 42px;
   }
 }
+
+
+/* ==========================================
+   MATHVENTURE - RESPONSIVE CRUD
+========================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .crud {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .crud .page-head {
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .crud .form-card {
+    padding: 24px;
+  }
+
+  .crud .table th,
+  .crud .table td {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .crud .cell-sub {
+    max-width: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .crud {
+    width: 100%;
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .crud .page-head {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+    margin-bottom: 16px;
+  }
+
+  .crud .page-head h1 {
+    font-size: 19px;
+  }
+
+  .crud .page-head p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .crud .page-head .btn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .crud .table-toolbar {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    margin-top: 16px;
+    margin-bottom: 14px;
+  }
+
+  .crud .table-filter,
+  .crud select.table-filter,
+  .crud .user-search-wrapper {
+    width: 100%;
+    max-width: none;
+  }
+
+  .crud .table-count {
+    align-self: flex-start;
+    margin-left: 0;
+  }
+
+  .crud .card-table {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border-radius: 9px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .crud .table {
+    min-width: 600px;
+    width: 100%;
+  }
+
+  .crud .table th {
+    padding: 12px 13px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .crud .table td {
+    padding: 10px 13px;
+    height: auto;
+    min-height: 48px;
+    font-size: 13px;
+  }
+
+  .crud .cell-sub {
+    max-width: 260px;
+    font-size: 12px;
+  }
+
+  .crud .row-actions {
+    gap: 7px;
+  }
+
+  .crud .btn-action-edit,
+  .crud .btn-action-delete {
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .crud .form-card {
+    width: 100%;
+    padding: 19px 15px;
+    border-radius: 9px;
+  }
+
+  .crud .field {
+    margin-bottom: 17px;
+  }
+
+  .crud .field label {
+    font-size: 13px;
+  }
+
+  .crud .input {
+    width: 100%;
+    min-width: 0;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .crud textarea.input {
+    min-height: 130px;
+    height: 140px;
+    font-size: 16px;
+  }
+
+  .crud .form-actions {
+    width: 100%;
+    display: flex;
+    gap: 9px;
+    margin-top: 20px;
+  }
+
+  .crud .btn-cancel,
+  .crud .btn-submit {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
+  .crud .alert-error {
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .crud .modal {
+    width: 100%;
+    max-width: 420px;
+    padding: 20px 16px;
+  }
+
+  .crud .modal-actions {
+    gap: 8px;
+  }
+
+  .crud .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 16px;
+    justify-content: center;
+    padding: 12px;
+    font-size: 13px;
+  }
+
+  .crud .games-name-cell {
+    min-width: 175px;
+    gap: 9px;
+  }
+
+  .crud .games-thumbnail {
+    width: 42px;
+    height: 42px;
+  }
+
+  .crud .games-image-preview img {
+    width: 100%;
+    max-width: 220px;
+    height: 140px;
+  }
+
+  .mv-pagination {
+    gap: 5px;
+  }
+}
+
+/* HP kecil */
+@media (max-width: 480px) {
+  .crud .page-head h1 {
+    font-size: 18px;
+  }
+
+  .crud .btn {
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .crud .table {
+    min-width: 580px;
+  }
+
+  .crud .table th,
+  .crud .table td {
+    padding-left: 11px;
+    padding-right: 11px;
+  }
+
+  .crud .form-card {
+    padding: 17px 12px;
+  }
+
+  .crud .modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .crud .modal-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .crud .games-name-cell {
+    min-width: 160px;
+  }
+
+  .mv-pagination {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* HP sangat kecil */
+@media (max-width: 360px) {
+  .crud .form-card {
+    padding: 14px 10px;
+  }
+
+  .crud .form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .crud .btn-cancel,
+  .crud .btn-submit {
+    width: 100%;
+  }
+
+  .crud .table {
+    min-width: 560px;
+  }
+}
